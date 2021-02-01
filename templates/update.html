@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block title %} Update Posts {% endblock %}
+
+{% block body %}
+<h1 class="text-center">Update Post Page</h1>
+<div class="row">
+    <div class="col-md-6 offset-sm-3">   
+        <form action="/update-post/{{ post.id }}" method="POST" ">
+            <div class="form-group">
+                <label for="content">Content</label>
+                <input type="text" class="form-control" value="{{ post.content }}" name="content" id="content">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" class="form-control" value="{{ post.description }}" name="description" id="description">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Create</button>
+            </div> 
+        </form>
+    </div>
+</div>
+{% endblock %}
